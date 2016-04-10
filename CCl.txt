@@ -1,0 +1,673 @@
+!
+! Mechanism for CH3CL, CH2CL2, CHCL3 laminar flame speeds
+! J.C. Leylegian, H.Wang, D.L. Zhu, and C.K. Law
+! Units for A are cm-mol-s-cal-K
+! Units for E are cal/mol
+!
+ELEMENTS
+O  H  C  N  CL  AR
+END
+!
+SPECIES
+H2      H       O       O2      OH      H2O     HO2     H2O2
+C       CH      CH2     CH2*    CH3     CH4     CO      CO2
+HCO     CH2O    CH2OH   CH3O    CH3OH   C2H     C2H2    C2H3
+C2H4    C2H5    C2H6    HCCO    CH2CO   HCCOH   N2
+!
+CL          CL2        HCL        CLO        HOCL       CH3CL
+CH2CL2      CH2CL      CHCL2      CH2CLO     CHCLO      CHCL
+COCL2       CCLO       CH2CH2CL   C2H3CL     CH2CCL2    C2HCL
+C2H5CL      CH2CLCH2CL CH2CLCHCL  CH3CHCL    AR         CHCL3
+CCL3        CCL2       CH3CHCL2   CH3CCL3    CH2CLCHCL2 CH2CLCCL3
+CHCL2CHCL2  CH3CCL2    CH2CHCL2   CH2CLCCL2  CHCLCHCL2  CH2CCL3
+CHCLCCL3    CHCL2CCL2  CHCLCHCL   C2HCL3     C2CL4      C2CL3
+C2CL2       CCL4       C2HCL5     C2CL6      C2CL5      CH2CCL
+CHCHCL      CHCCL2     CHCLCCL
+END
+REACTIONS
+!
+! (References for rate constants follow coefficients)
+!
+2O + M = O2 + M                          1.200E+17   -1.000      0. ! a
+H2/2.4/ H2O/15.4/ CH4/2./ CO/1.75/ CO2/3.6/ C2H6/3./ AR/0.83/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+O + H + M = OH + M                       5.000E+17   -1.000      0. ! a
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+O + H2 = H + OH                          5.000E+04    2.670   6290. ! a
+O + HO2 = OH + O2                        2.000E+13    0.000      0. ! a
+O + H2O2 = OH + HO2                      9.630E+06    2.000   4000. ! a
+O + CH = H + CO                          5.700E+13    0.000      0. ! a
+O + CH2 = H + HCO                        8.000E+13    0.000      0. ! a
+O + CH2* = H2 + CO                       1.500E+13    0.000      0. ! a
+O + CH2* = H + HCO                       1.500E+13    0.000      0. ! a
+O + CH3 = H + CH2O                       8.430E+13    0.000      0. ! a
+O + CH4 = OH + CH3                       1.020E+09    1.500   8600. ! a
+O + CO + M = CO2 + M                     6.020E+14    0.000   3000. ! a
+H2/2./ O2/6./ H2O/6./ CH4/2./ CO/1.5/ CO2/3.5/ C2H6/3./ AR/0.5/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+O + HCO = OH + CO                        3.000E+13    0.000      0. ! a
+O + HCO = H + CO2                        3.000E+13    0.000      0. ! a
+O + CH2O = OH + HCO                      3.900E+13    0.000   3540. ! a
+O + CH2OH = OH + CH2O                    1.000E+13    0.000      0. ! a
+O + CH3O = OH + CH2O                     1.000E+13    0.000      0. ! a
+O + CH3OH = OH + CH2OH                   3.880E+05    2.500   3100. ! a
+O + CH3OH = OH + CH3O                    1.300E+05    2.500   5000. ! a
+O + C2H = CH + CO                        5.000E+13    0.000      0. ! a
+O + C2H2 = H + HCCO                      1.020E+07    2.000   1900. ! a
+O + C2H2 = OH + C2H                      4.600E+19   -1.410  28950. ! a
+O + C2H2 = CO + CH2                      1.020E+07    2.000   1900. ! a
+O + C2H3 = H + CH2CO                     3.000E+13    0.000      0. ! a
+O + C2H4 = CH3 + HCO                     1.920E+07    1.830    220. ! a
+O + C2H5 = CH3 + CH2O                    1.320E+14    0.000      0. ! a
+O + C2H6 = OH + C2H5                     8.980E+07    1.920   5690. ! a
+O + HCCO = H + 2CO                       1.000E+14    0.000      0. ! a
+O + CH2CO = OH + HCCO                    1.000E+13    0.000   8000. ! a
+O + CH2CO = CH2 + CO2                    1.750E+12    0.000   1350. ! a
+O2 + CO = O + CO2                        2.500E+12    0.000  47800. ! a
+O2 + CH2O = HO2 + HCO                    1.000E+14    0.000  40000. ! a
+H + O2 + M = HO2 + M                     2.800E+18   -0.860      0. ! a
+O2/0./ H2O/0./ CO/0.75/ CO2/1.5/ C2H6/1.5/ N2/0./ AR/0./ CH3CL/1.5/ 
+CH2CL2/3./ CHCL3/3./
+H + 2O2 = HO2 + O2                       3.000E+20   -1.720      0. ! a
+H + O2 + H2O = HO2 + H2O                 1.652E+19   -0.760      0. ! a,b
+H + O2 + N2 = HO2 + N2                   3.750E+20   -1.720      0. ! a
+H + O2 + AR = HO2 + AR                   7.000E+17   -0.800      0. ! a
+H + O2 = O + OH                          8.300E+13    0.000  14413. ! a
+2H + M = H2 + M                          1.000E+18   -1.000      0. ! a
+H2/0./ H2O/0./ CH4/2./ CO2/0./ C2H6/3./ AR/0.63/ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+2H + H2 = 2H2                            9.000E+16   -0.600      0. ! a
+2H + H2O = H2 + H2O                      6.000E+19   -1.250      0. ! a
+2H + CO2 = H2 + CO2                      5.500E+20   -2.000      0. ! a
+H + OH + M = H2O + M                     2.200E+22   -2.000      0. ! a
+H2/0.73/ H2O/3.65/ CH4/2./ C2H6/3./ AR/0.38/ CH3CL/3./ CH2CL2/3./ CHCL3/3./
+H + HO2 = O + H2O                        3.970E+12    0.000    671. ! a
+H + HO2 = O2 + H2                        2.800E+13    0.000   1068. ! a
+H + HO2 = 2OH                            1.340E+14    0.000    635. ! a
+H + H2O2 = HO2 + H2                      1.210E+07    2.000   5200. ! a
+H + H2O2 = OH + H2O                      1.000E+13    0.000   3600. ! a
+H + CH = C+H2                            1.100E+14    0.000      0. ! a
+H + CH2 (+M) = CH3 (+M)                  2.500E+16   -0.800      0. ! a
+                                LOW   /  3.200E+27   -3.140   1230./
+                                TROE  /  0.6800 78. 1995. 5590./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+H + CH2* = CH + H2                       3.000E+13    0.000      0. ! a
+H + CH3 (+M) = CH4 (+M)                  1.782E+16   -0.630    383. ! a
+                                LOW   /  2.484E+33   -4.760   2440./
+                                TROE  /  0.7830 74. 2941. 6964./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+H + CH4 = CH3 + H2                       6.600E+08    1.620  10840. ! a
+H + HCO (+M) = CH2O (+M)                 1.090E+12    0.480   -260. ! a
+                                LOW   /  1.350E+24   -2.570   1425./
+                                TROE  /  0.7824 271. 2755. 6570./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+H + HCO = H2 + CO                        7.340E+13    0.000      0. ! a
+H + CH2O (+M) = CH2OH (+M)               5.400E+11    0.454   3600. ! a
+                                LOW   /  1.270E+32   -4.820   6530./
+                                TROE  /  0.7187 103. 1291. 4160./
+H2/2./ H2O/6./ CH4/2./ CO/1.50/ CO2/2./ C2H6/3./ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+H + CH2O (+M) = CH3O (+M)                5.400E+11    0.454   2600. ! a
+                                LOW   /  2.200E+30   -4.800   5560./
+                                TROE  /  0.7580 94. 1555. 4200./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+H + CH2O = HCO + H2                      2.300E+10    1.050   3275. ! a
+H + CH2OH (+M) = CH3OH (+M)              1.800E+13    0.000      0. ! a
+                                LOW   /  3.000E+31   -4.800   3300./
+                                TROE  /  0.7679 338. 1812. 5081./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+H + CH2OH = H2 + CH2O                    2.000E+13    0.000      0. ! a
+H + CH2OH = OH + CH3                     1.200E+13    0.000      0. ! a
+H + CH2OH = CH2* + H2O                   6.000E+12    0.000      0. ! a
+H + CH3O (+M) = CH3OH (+M)               5.000E+13    0.000      0. ! a
+                                LOW   /  8.600E+28   -4.000   3025./
+                                TROE  /  0.8902 144. 2838. 45569./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+H + CH3O = H + CH2OH                     3.400E+06    1.600      0. ! a
+H + CH3O = H2 + CH2O                     2.000E+13    0.000      0. ! a
+H + CH3O = OH + CH3                      3.200E+13    0.000      0. ! a
+H + CH3O = CH2* + H2O                    1.600E+13    0.000      0. ! a
+H + CH3OH = CH2OH + H2                   1.700E+07    2.100   4870. ! a
+H + CH3OH = CH3O + H2                    4.200E+06    2.100   4870. ! a
+H + C2H (+M) = C2H2 (+M)                 1.000E+17   -1.000      0. ! a
+                                LOW   /  3.750E+33   -4.800   1900./
+                                TROE  /  0.6464 132. 1315. 5566./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+H + C2H2 (+M) = C2H3 (+M)                5.600E+12    0.000   2400. ! a
+                                LOW   /  3.800E+40   -7.270   7220./
+                                TROE  /  0.7507 98.5 1302. 4167./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+H + C2H3 (+M) = C2H4 (+M)                6.080E+12    0.270    280. ! a
+                                LOW   /  1.400E+30   -3.860   3320./
+                                TROE  /  0.7820 207.5 2663. 6095./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+H + C2H3 = H2 + C2H2                     3.000E+13    0.000      0. ! a
+H + C2H4 (+M) = C2H5 (+M)                1.080E+12    0.454   1820. ! a
+                                LOW   /  1.200E+42   -7.620   6970./
+                                TROE  /  0.9753 210. 984. 4374./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+H + C2H4 = C2H3 + H2                     1.325E+06    2.530  12240. ! a
+H + C2H5 (+M) = C2H6 (+M)                5.210E+17   -0.990   1580. ! a
+                                LOW   /  1.990E+41   -7.080   6685./
+                                TROE  /  0.8422 125. 2219. 6882./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+H + C2H5 = H2 + C2H4                     2.000E+12    0.000      0. ! a
+H + C2H6 = C2H5 + H2                     1.150E+08    1.900   7530. ! a
+H + HCCO = CH2* + CO                     1.000E+14    0.000      0. ! a
+H + CH2CO = HCCO + H2                    5.000E+13    0.000   8000. ! a
+H + CH2CO = CH3 + CO                     1.130E+13    0.000   3428. ! a
+H + HCCOH = H + CH2CO                    1.000E+13    0.000      0. ! a
+H2 + CO (+M) = CH2O (+M)                 4.300E+07    1.500  79600. ! a
+                                LOW   /  5.070E+27   -3.420  84350./
+                                TROE  /  0.9320 197. 1540. 10300./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+OH + H2 = H + H2O                        2.160E+08    1.510   3430. ! a
+2OH (+M) = H2O2 (+M)                     7.400E+13   -0.370      0. ! a
+                                LOW   /  2.300E+18   -0.900  -1700./
+                                TROE  /  0.7346 94. 1756. 5182./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+2OH = O + H2O                            3.570E+04    2.400  -2110. ! a
+OH + HO2 = O2 + H2O                      4.616E+13    0.000   -500. ! a,b
+OH + H2O2 = HO2 + H2O                    1.750E+12    0.000    320. ! a
+ DUPLICATE
+OH + H2O2 = HO2 + H2O                    5.800E+14    0.000   9560. ! a
+ DUPLICATE
+OH + C = H + CO                          5.000E+13    0.000      0. ! a
+OH + CH = H + HCO                        3.000E+13    0.000      0. ! a
+OH + CH2 = H + CH2O                      2.000E+13    0.000      0. ! a
+OH + CH2 = CH + H2O                      1.130E+07    2.000   3000. ! a
+OH + CH2* = H + CH2O                     3.000E+13    0.000      0. ! a
+OH + CH3 (+M) = CH3OH (+M)               6.300E+13    0.000      0. ! a
+                                LOW   /  2.700E+38   -6.300   3100./
+                                TROE  /  0.2105 83.5 5398. 8370./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+OH + CH3 = CH2 + H2O                     5.600E+07    1.600   5420. ! a
+OH + CH3 = CH2* + H2O                    2.500E+13    0.000      0. ! a
+OH + CH4 = CH3 + H2O                     1.000E+08    1.600   3120. ! a
+OH + CO = H + CO2                        4.760E+07    1.228     70. ! a
+OH + HCO = H2O + CO                      5.000E+13    0.000      0. ! a
+OH + CH2O = HCO + H2O                    3.430E+09    1.180   -447. ! a
+OH + CH2OH = H2O + CH2O                  5.000E+12    0.000      0. ! a
+OH + CH3O = H2O + CH2O                   5.000E+12    0.000      0. ! a
+OH + CH3OH = CH2OH + H2O                 1.440E+06    2.000   -840. ! a
+OH + CH3OH = CH3O + H2O                  6.300E+06    2.000   1500. ! a
+OH + C2H = H + HCCO                      2.000E+13    0.000      0. ! a
+OH + C2H2 = H + CH2CO                    2.180E-04    4.500  -1000. ! a
+OH + C2H2 = H + HCCOH                    5.040E+05    2.300  13500. ! a
+OH + C2H2 = C2H + H2O                    3.370E+07    2.000  14000. ! a
+OH + C2H2 = CH3 + CO                     4.830E-04    4.000  -2000. ! a
+OH + C2H3 = H2O + C2H2                   5.000E+12    0.000      0. ! a
+OH + C2H4 = C2H3 + H2O                   3.600E+06    2.000   2500. ! a
+OH + C2H6 = C2H5 + H2O                   3.540E+06    2.120    870. ! a
+OH + CH2CO = HCCO + H2O                  7.500E+12    0.000   2000. ! a
+2HO2 = O2 + H2O2                         1.300E+11    0.000  -1630. ! a
+ DUPLICATE
+2HO2 = O2 + H2O2                         4.200E+14    0.000  12000. ! a
+ DUPLICATE
+HO2 + CH2 = OH + CH2O                    2.000E+13    0.000      0. ! a
+HO2 + CH3 = O2 + CH4                     1.000E+12    0.000      0. ! a
+HO2 + CH3 = OH + CH3O                    1.333E+13    0.000      0. ! a,b
+HO2 + CO = OH + CO2                      1.500E+14    0.000  23600. ! a
+HO2 + CH2O = HCO + H2O2                  1.000E+12    0.000   8000. ! a
+C+O2 = O + CO                            5.800E+13    0.000    576. ! a
+C+CH2 = H + C2H                          5.000E+13    0.000      0. ! a
+C+CH3 = H + C2H2                         5.000E+13    0.000      0. ! a
+CH + O2 = O + HCO                        3.300E+13    0.000      0. ! a
+CH + H2 = H + CH2                        1.096E+08    1.790   1670. ! a
+CH + H2O = H + CH2O                      5.710E+12    0.000   -755. ! a
+CH + CH2 = H + C2H2                      4.000E+13    0.000      0. ! a
+CH + CH3 = H + C2H3                      3.000E+13    0.000      0. ! a
+CH + CH4 = H + C2H4                      6.000E+13    0.000      0. ! a
+CH + CO (+M) = HCCO (+M)                 5.000E+13    0.000      0. ! a
+                                LOW   /  2.690E+28   -3.740   1936./
+                                TROE  /  0.5757 237. 1652. 5069./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+CH + CO2 = HCO + CO                      3.400E+12    0.000    690. ! a
+CH + CH2O = H + CH2CO                    9.460E+13    0.000   -515. ! a
+CH + HCCO = CO + C2H2                    5.000E+13    0.000      0. ! a
+CH2 + O2 = OH + HCO                      1.320E+13    0.000   1500. ! a
+CH2 + H2 = H + CH3                       5.000E+05    2.000   7230. ! a
+2CH2 = H2 + C2H2                         3.200E+13    0.000      0. ! a
+CH2 + CH3 = H + C2H4                     4.000E+13    0.000      0. ! a
+CH2 + CH4 = 2CH3                         2.460E+06    2.000   8270. ! a
+CH2 + CO (+M) = CH2CO (+M)               8.100E+11    0.500   4510. ! a
+                                LOW   /  2.690E+33   -5.110   7095./
+                                TROE  /  0.5907 275. 1226. 5185./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+CH2 + HCCO = C2H3 + CO                   3.000E+13    0.000      0. ! a
+CH2* + N2 = CH2 + N2                     1.500E+13    0.000    600. ! a
+CH2* + AR = CH2 + AR                     9.000E+12    0.000    600. ! a
+CH2* + O2 = H + OH + CO                  2.800E+13    0.000      0. ! a
+CH2* + O2 = CO + H2O                     1.200E+13    0.000      0. ! a
+CH2* + H2 = CH3 + H                      7.000E+13    0.000      0. ! a
+CH2* + H2O (+M) = CH3OH (+M)             2.000E+13    0.000      0. ! a
+                                LOW   /  2.700E+38   -6.300   3100./
+                                TROE  /  0.1507 134. 2383. 7265./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+CH2* + H2O = CH2 + H2O                   3.000E+13    0.000      0. ! a
+CH2* + CH3 = H + C2H4                    1.200E+13    0.000   -570. ! a
+CH2* + CH4 = 2CH3                        1.600E+13    0.000   -570. ! a
+CH2* + CO = CH2 + CO                     9.000E+12    0.000      0. ! a
+CH2* + CO2 = CH2 + CO2                   7.000E+12    0.000      0. ! a
+CH2* + CO2 = CO + CH2O                   1.400E+13    0.000      0. ! a
+CH2* + C2H6 = CH3 + C2H5                 4.000E+13    0.000   -550. ! a
+CH3 + O2 = O + CH3O                      3.083E+13    0.000  28800. ! a,b
+CH3 + O2 = OH + CH2O                     3.600E+10    0.000   8940. ! a
+CH3 + H2O2 = HO2 + CH4                   2.450E+04    2.470   5180. ! a
+2CH3 (+M) = C2H6 (+M)                    2.120E+16   -0.970    620. ! a
+                                LOW   /  1.770E+50   -9.670   6220./
+                                TROE  /  0.5325 151. 1038. 4970./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+2CH3 = H + C2H5                          4.990E+12    0.100  10600. ! a
+CH3 + HCO = CH4 + CO                     2.648E+13    0.000      0. ! a
+CH3 + CH2O = HCO + CH4                   3.320E+03    2.810   5860. ! a
+CH3 + CH3OH = CH2OH + CH4                3.000E+07    1.500   9940. ! a
+CH3 + CH3OH = CH3O + CH4                 1.000E+07    1.500   9940. ! a
+CH3 + C2H4 = C2H3 + CH4                  2.270E+05    2.000   9200. ! a
+CH3 + C2H6 = C2H5 + CH4                  6.140E+06    1.740  10450. ! a
+HCO + H2O = H + CO + H2O                 3.366E+18   -1.000  17000. ! a,b
+HCO + M = H + CO + M                     1.870E+17   -1.000  17000. ! a
+H2/2./ H2O/0./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ CH2CL2/3./ 
+CHCL3/3./
+HCO + O2 = HO2 + CO                      7.600E+12    0.000    400. ! a
+CH2OH + O2 = HO2 + CH2O                  1.800E+13    0.000    900. ! a
+CH3O + O2 = HO2 + CH2O                   4.280E-13    7.600  -3530. ! a
+C2H + O2 = HCO + CO                      5.000E+13    0.000   1500. ! a
+C2H + H2 = H + C2H2                      4.070E+05    2.400    200. ! a
+C2H3 + O2 = HCO + CH2O                   3.980E+12    0.000   -240. ! a
+C2H4 (+M) = H2 + C2H2 (+M)               8.000E+12    0.440  88770. ! a
+                                LOW   /  7.000E+50   -9.310  99860./
+                                TROE  /  0.7345 180. 1035. 5417./
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ AR/0.7/ CH3CL/3./ 
+CH2CL2/3./ CHCL3/3./
+C2H5 + O2 = HO2 + C2H4                   8.400E+11    0.000   3875. ! a
+HCCO + O2 = OH + 2CO                     1.600E+12    0.000    854. ! a
+2HCCO = 2CO + C2H2                       1.000E+13    0.000      0. ! a
+H + CL + M = HCL + M                     5.300E+21   -2.000  -2000. ! b
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ AR/0.7/ CH2CL2/3./ 
+CHCL3/3./
+CL + CL + M = CL2 + M                    3.340E+14    0.000  -1800. ! c
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ AR/0.7/ CH2CL2/3./ 
+CHCL3/3./
+CL + HO2= HCL + O2                       1.080E+13    0.000   -338. ! d,e
+CL + HO2 = CLO + OH                      2.470E+13    0.000    894. ! d,e
+CL + H2O2 = HCL + HO2                    6.620E+12    0.000   1950. ! d,e
+CL + HOCL = CL2 + OH                     1.810E+12    0.000    260. ! d,e
+CL + CH4 = CH3 + HCL                     3.090E+13    0.000   3600. ! d,c
+CL + CH3O = HCL + CH2O                   4.000E+14    0.000      0. ! f
+CL + CH2OH = HCL + CH2O                  4.000E+14    0.000      0. ! d,e
+CL + CH2O = HCO + HCL                    5.000E+13    0.000    500. ! f
+CL + C2H6 = C2H5 + HCL                   4.370E+13    0.000    100. ! f
+CL + C2H4 = C2H3 + HCL                   2.390E+13    0.000   8200. ! v,E+5.6kcal
+CL + C2H2 = C2H + HCL                    1.580E+14    0.000  30200. ! v,E+13.3kcal
+CLO + O = CL + O2                        9.700E+12    0.000    507. ! g
+CLO + H2 = HOCL + H                      6.030E+11    0.000  14100. ! d
+CLO + CH4 = CH3 + HOCL                   6.030E+11    0.000  15000. ! d
+CLO + CH3  = CH3O + CL                   3.330E+11    0.460     30. ! d
+CLO + CH3 = CH2O + HCL                   3.470E+18   -1.800   2070. ! d
+CLO + CH3O = HOCL + CH2O                 2.410E+13    0.000      0. ! d
+CLO + CH2O = HCO + HOCL                  5.500E+03    2.810   5860. ! d
+CLO + CO = CL + CO2                      6.030E+11    0.000  17400. ! e,h
+HOCL = CL + OH                           1.760E+20   -3.010  56720. ! d
+HOCL = H + CLO                           8.120E+14   -2.090  93690. ! d
+HOCL + H = HCL + OH                      9.550E+13    0.000   7620. ! d
+HOCL + O = OH + CLO                      6.030E+12    0.000   4370. ! d,e
+HOCL + OH = H2O + CLO                    1.810E+12    0.000    990. ! d,e
+HOCL + CL = HCL + CLO                    7.280E+12    0.000    100. ! d
+HCL + H = H2 + CL                        1.690E+13    0.000   4135. ! i
+HCL + O = OH + CL                        5.240E+12    0.000   6400. ! c,h
+HCL + OH = CL + H2O                      2.450E+12    0.000   1100. ! c,h
+CL2 + H = HCL + CL                       8.590E+13    0.000   1170. ! f
+CL2 + O = CL + CLO                       2.510E+12    0.000   2720. ! f
+CH3CL = CH3 + CL                         1.310E+37   -6.920  90650. ! f
+CH3CL = CH2*   + HCL                     1.100E+28   -5.150 109670. ! f
+CH3CL + H = CH3 + HCL                    6.640E+13    0.000   7620. ! c,d
+CH3CL + CL = CH2CL + HCL                 3.160E+13    0.000   3300. ! c,d
+CH3CL + O = CH2CL + OH                   1.700E+13    0.000   7300. ! c,d
+CH3CL + OH = CH2CL + H2O                 2.450E+12    0.000   2700. ! c,d
+CH3CL + HO2 = CH2CL + H2O2               1.000E+13    0.000  21660. ! d
+CH3CL + O2 = CH2CL + HO2                 2.020E+13    0.000  54000. ! f
+CH3CL + CLO = CH2CL + HOCL               3.030E+11    0.000  10700. ! d
+CH3CL + CH3 = CH4 + CH2CL                3.300E+11    0.000   9400. ! c,d
+CH3CL + CH2*   = C2H4 + HCL              1.600E+18   -1.470   2710. ! d
+CH3CL + CH2*   = C2H5 + CL               3.090E+07    1.700    520. ! d
+CH2CL2 = CHCL + HCL                      1.820E+37   -7.430  85730. ! f
+CH2CL2 = CH2CL + CL                      1.600E+40   -7.840  83600. ! f
+CH2CL2 + H = CH2CL + HCL                 7.000E+13    0.000   7100. ! f
+CH2CL2 + CL = CHCL2 + HCL                2.790E+13    0.000   2940. ! f
+CH2CL2 + O = CHCL2 + OH                  6.600E+06    1.990   5670. ! j
+CH2CL2 + OH = CHCL2 + H2O                2.830E+12    0.000   2090. ! d,e
+CH2CL2 + O2 = CHCL2 + HO2                1.350E+13    0.000  51800. ! f
+CH2CL2 + HO2 = CHCL2 + H2O2              6.670E+12    0.000  18270. ! h
+CH2CL2 + CH3 = CH4 + CHCL2               6.760E+10    0.000   7200. ! c,d
+CH2CL2 + CH3 = CH3CL + CH2CL             1.400E+11    0.000   4900. ! c,d
+CHCL3 = CHCL2 + CL                       2.650E+19   -1.880  72040. ! f (refit)
+CHCL3 = CCL2 + HCL                       5.200E+12    0.000  51500. ! f
+CHCL3 + H = HCL + CHCL2                  3.600E+12    0.000   6200. ! k
+CHCL3 + CL = HCL + CCL3                  1.600E+13    0.000   3300. ! k
+CHCL3 + O = OH + CCL3                    1.100E+13    0.220   9450. ! l
+CHCL3 + OH = H2O + CCL3                  3.300E+12    0.000   2300. ! f
+CHCL3 + O2 = HO2 + CCL3                  1.000E+13    0.000  47200. ! f
+CHCL3 + HO2 = H2O2 + CCL3                4.500E+10    0.000  14200. ! f
+CHCL3 + CH3 = CH3CL + CHCL2              2.400E+13    0.000  12000. ! f
+CCL4 = CCL3 + CL                         4.890E+32   -5.410  73395. ! k (refit)
+CCL4 + H = CCL3 + HCL                    1.200E+12    0.000   5000. ! k
+CCL3 + CL2 = CCL4 + CL                   4.800E+11    0.000   2500. ! k
+CCL2 + CL2 = CCL4                        3.000E+13    0.000   6000. ! k
+CCL4 + O = CCL3 + CLO                    3.000E+11    0.000   4370. ! j
+CCL4 + OH = CCL3 + HOCL                  9.980E+27   -4.550  15590. ! Est'd
+CH2CL + H = CH3CL                        3.040E+25   -4.470   3490. ! f
+CH2CL + H = CH2*   + HCL                 9.480E+04    1.910   2600. ! f
+CH2CL + H = CH3 + CL                     5.120E+14   -0.220    310. ! f
+CH2CL + O = CH2CLO                       1.290E+15   -1.980   1100. ! d
+CH2CL + O = CH2O + CL                    5.590E+13   -0.130    710. ! d
+CH2CL + OH = CH2O + HCL                  1.240E+22   -2.720   3860. ! d
+CH2CL + OH = CH2OH + CL                  2.000E+12    0.290   3270. ! d
+CH2CL + HO2 = CH2CLO + OH                1.000E+13    0.000      0. ! d
+CH2CL + CLO = CH2CLO + CL                4.150E+12    0.070   1110. ! d
+CH2CL + CLO = CHCLO + HCL                4.130E+19   -2.220   2360. ! d
+CH2CL + H2 = CH3CL + H                   3.900E+12    0.000  14059. ! d
+CH2CL + O2 = CH2O + CLO                  1.910E+14   -1.270   3810. ! d
+CH2CL + O2 = CHCLO +OH                   4.000E+13    0.000  34000. ! f
+CH2CL + CH2O = CH3CL + HCO               2.000E+11    0.000   6000. ! f
+CHCL2 + H = CH2CL2                       4.810E+26   -4.820   3810. ! h
+CHCL2 + H = CH2CL + CL                   1.250E+14   -0.030    570. ! h
+CHCL2 + H2 = CH2CL2 + H                  4.630E+12    0.000  15295. ! h
+CHCL2 + O = CHCLO + CL                   1.000E+14    0.000   2000. ! m
+CHCL2 + OH = CHCLO + HCL                 5.000E+12    0.000      0. ! Est'd
+CHCL2 + O2 = CHCLO + CLO                 1.000E+13    0.000  28000. ! n
+CHCL2 + HO2 = CHCLO + CL + OH            1.000E+13    0.000      0. ! Est'd
+CCL3 + H2 = CHCL3 + H                    5.010E+12    0.000  14300. ! f
+CCL3 + CH4 = CHCL3 + CH3                 5.000E+12    0.000  14900. ! f
+CCL3 + H = CHCL2 + CL                    8.000E+13    0.000      0. ! Est'd
+CCL3 + O = COCL2 + CL                    5.000E+13    0.000      0. ! Est'd
+CCL3 + OH = COCL2 + HCL                  5.000E+12    0.000      0. ! Est'd
+CCL3 + O2 = COCL2 + CLO                  1.900E+13    0.000  28000. ! m
+CCL3 + HO2 = COCL2 + CL + OH             1.000E+13    0.000      0. ! Est'd
+CCL2 + O2 = COCL2 + O                    5.780E+10    0.000   4100. ! f
+CCL2 + H = CHCL + CL                     1.000E+14    0.000      0. ! Est'd
+CCL2 + OH = CCLO + HCL                   1.000E+13    0.000      0. ! Est'd
+CCL2 + O = CO + CL2                      3.000E+13    0.000      0. ! Est'd
+CHCL + H = CH2 + CL                      1.000E+14    0.000      0. ! Est'd
+CHCL + O = CO + HCL                      3.000E+13    0.000      0. ! l
+CHCL + O2 = CHCLO + O                    1.500E+13    0.000   2860. ! f
+CHCL + O2 = CO + HOCL                    1.200E+11    0.000      0. ! f
+CH2CLO = CHCLO + H                       1.830E+27   -5.130  21170. ! f
+CH2CLO = CH2O + CL                       4.530E+31   -6.410  22560. ! f
+CHCLO = HCO + CL                         8.860E+29   -5.150  92920. ! f
+CHCLO = CO + HCL                         1.100E+30   -5.190  92960. ! f
+CHCLO + H = HCO + HCL                    8.330E+13    0.000   7400. ! f
+CHCLO + H = CH2O + CL                    6.990E+14   -0.580   6360. ! d
+CHCLO + CL = CCLO + HCL                  1.250E+13    0.000    500. ! f
+CHCLO + O = CCLO + OH                    8.800E+12    0.000   3500. ! d
+CHCLO + OH = CCLO + H2O                  7.500E+12    0.000   1200. ! d
+CHCLO + O2 = CCLO + HO2                  4.500E+12    0.000  41800. ! f
+CHCLO + CLO = CCLO + HOCL                1.100E+13    0.000    500. ! f
+CHCLO + CH3 = CCLO + CH4                 2.500E+13    0.000   6000. ! f
+CHCLO + CH3 = HCO + CH3CL                1.500E+13    0.000   8800. ! f
+COCL2 + M = CCLO + CL + M                1.200E+16    0.000  75500. ! f
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ AR/0.7/ 
+CH2CL2/3./ CHCL3/3./
+COCL2 + H = CCLO + HCL                   5.000E+13    0.000   6300. ! f
+COCL2 + CL = CCLO + CL2                  3.200E+14    0.000  23500. ! f
+COCL2 + O = CCLO + CLO                   2.000E+13    0.000  17000. ! f
+COCL2 + OH = CCLO + HOCL                 1.000E+13    0.000  23300. ! f
+COCL2 + CH3 = CCLO + CH3CL               1.900E+13    0.000  12900. ! f
+CCLO = CO + CL                           1.300E+14    0.000   8000. ! d
+CCLO + OH = CO + HOCL                    3.300E+12    0.000      0. ! f
+CCLO + O2 = CO2 + CLO                    1.000E+13    0.000      0. ! f
+CCLO + CL = CO + CL2                     4.000E+14    0.000    800. ! f
+CH3 + CH2CL =  C2H5CL                    3.270E+40   -8.490  10590. ! d
+CH3 + CHCL2 = CH3CHCL2                   2.280E+41   -8.680  11620. ! d
+CH3 + CCL3 = CH3CCL3                     9.540E+46  -10.660  11740. ! f
+CH2CL + CH2CL = CH2CLCH2CL               7.840E+45  -10.210  13150. ! d
+CH2CL + CHCL2 = CH2CLCHCL2               6.410E+43  -10.220  12910. ! f
+CH2CL + CCL3 = CH2CLCCL3                 4.010E+45  -10.150  10670. ! f
+CHCL2 + CHCL2 = CHCL2CHCL2               9.080E+45  -10.560  13170. ! h
+CHCL2 + CCL3 = C2HCL5                    5.590E+09    0.000  -8000. ! k
+CCL3 + CCL3 = C2CL6                      6.380E+58  -14.270  19600. ! RRKM
+CH2CL + CCL2 = CH2CLCCL2                 3.140E+08    0.000  -5600. ! k
+CHCL2 + CCL2 = CHCL2CCL2                 1.840E+07    0.000  -6100. ! k
+CCL3 + CCL2 = C2CL5                      4.230E+08    0.000  -5300. ! k
+CCL2 + CCL2 = C2CL4                      6.380E+11    0.000  -2500. ! k
+CH3 + CH2CL = C2H5 + CL                  9.270E+19   -2.070  10130. ! d
+CH3 + CHCL2 = CH3CHCL + CL               2.740E+25   -3.450  12810. ! d
+CH3 + CCL3 = CH3CCL2 + CL                3.980E+22   -2.630   7090. ! f
+CH2CL + CH2CL = CH2CH2CL + CL            9.340E+29   -4.940  14070. ! f
+CH2CL + CCL3 = CH2CLCCL2 + CL            5.900E+23   -2.840   8960. ! f
+CHCL2 + CHCL2 = CHCLCHCL2 + CL           1.360E+30   -5.230  14180. ! k
+CCL3 + CCL3 = C2CL5 + CL                 1.630E+29   -4.730  15500. ! RRKM
+CH2CL + CH2 = C2H4 + CL                  5.000E+12    0.000      0. ! Est'd
+CH2CL + CHCL = C2H3CL + CL               5.000E+12    0.000      0. ! Est'd
+CH2CL + CCL2 = CH2CCL2 + CL              8.010E+12    0.000      0. ! k
+CHCL2 + CH2 = C2H3CL + CL                5.000E+12    0.000      0. ! Est'd
+CHCL2 + CHCL = CHCLCHCL + CL             5.000E+12    0.000      0. ! Est'd
+CHCL2 + CCL2 = C2HCL3 + CL               3.160E+12    0.000      0. ! k
+CCL3 + CH2 = CH2CCL2 + CL                5.000E+12    0.000      0. ! Est'd
+CCL3 + CHCL = C2HCL3 + CL                5.000E+12    0.000      0. ! Est'd
+CCL3 + CCL2 = C2CL4 + CL                 6.310E+12    0.000      0. ! k
+CH2 + CHCL = C2H3 + CL                   5.000E+12    0.000      0. ! Est'd
+CH2 + CCL2 = CH2CCL + CL                 5.000E+12    0.000      0. ! Est'd
+CHCL + CHCL = CHCHCL + CL                5.000E+12    0.000      0. ! Est'd
+CHCL + CCL2 = CHCLCCL + CL               5.000E+12    0.000      0. ! Est'd
+CCL2 + CCL2 = C2CL3 + CL                 1.090E+14    0.000  10400. ! k
+CH2CL + CH3 = C2H4 + HCL                 3.500E+28   -4.490   9180. ! f
+CH3 + CHCL2 = C2H3CL + HCL               1.350E+30   -4.960  11550. ! d
+CH3 + CCL3 = CH2CCL2 + HCL               1.620E+30   -5.330   8640. ! f
+CH2CL + CH2CL = C2H3CL + HCL             3.750E+35   -6.730  13160. ! f
+CH2CL + CHCL2 = CH2CCL2 + HCL            3.750E+36   -7.220  13620. ! h
+CH2CL + CHCL2 = CHCLCHCL + HCL           1.220E+37   -7.200  13640. ! h
+CH2CL + CCL3 = C2HCL3 + HCL              4.740E+30   -5.080   8810. ! f
+CHCL2 + CHCL2 = C2HCL3 + HCL             6.720E+35   -7.110  13210. ! h
+CHCL2 + CCL3 = C2CL4 + HCL               6.030E+10    0.000    700. ! k
+C2H5CL = C2H4 + HCL                      7.810E+19   -2.000  60660. ! f
+C2H5CL = C2H5 + CL                       2.350E+43   -8.500  96980. ! f
+C2H5CL + H = C2H5 + HCL                  1.000E+14    0.000   7900. ! f
+C2H5CL + CL = HCL + CH3CHCL              3.550E+13    0.000   1500. ! f
+C2H5CL + CL = HCL + CH2CH2CL             1.120E+13    0.000   1500. ! f
+C2H5CL + OH = H2O + CH3CHCL              5.100E+06    2.000    994. ! f
+C2H5CL + OH = H2O + CH2CH2CL             3.600E+06    2.000   2240. ! f
+CH3CHCL2 = C2H3CL + HCL                  2.940E+21   -2.370  59460. ! h
+CH3CHCL2 = CH3CHCL + CL                  3.170E+42   -8.100  92670. ! h
+CH3CHCL2 + H = CH3CHCL + HCL             1.000E+14    0.000   7900. ! Est'd
+CH3CHCL2 + CL = CH2CHCL2 + HCL           5.000E+13    0.000   1500. ! Est'd
+CH3CHCL2 + OH = CH2CHCL2 + H2O           3.600E+06    2.000   2240. ! =CH3CCL3+OH
+CH3CHCL2 + OH = CH3CCL2 + H2O            3.800E+06    2.000   1000. ! Est'd
+CH3CCL3 = CH2CCL2 + HCL                  2.940E+21   -2.370  59460. ! =CH3CCL2
+CH3CCL3 = CH3CCL2 + CL                   3.170E+42   -8.100  92670. ! =CH3CCL2
+CH3CCL3 + H = CH3CCL2 + HCL              1.000E+14    0.000   7900. ! Est'd
+CH3CCL3 + CL = CH2CCL3 + HCL             5.000E+13    0.000   1500. ! Est'd
+CH3CCL3 + OH = CH2CCL3 + H2O             3.600E+06    2.000   2240. ! o
+CH2CLCH2CL = C2H3CL + HCL                6.760E+19   -1.930  58710. ! h
+CH2CLCH2CL + H = CH2CH2CL + HCL          1.000E+14    0.000   7900. ! Est'd
+CH2CLCH2CL + CL = CH2CLCHCL + HCL        5.000E+13    0.000   1500. ! Est'd
+CH2CLCH2CL + OH = H2O + CH2CLCHCL        5.100E+06    2.000    994. ! Est'd
+CH2CLCHCL2 = CHCLCHCL + HCL              1.390E+20   -2.030  60450. ! f
+CH2CLCHCL2 = CH2CCL2 + HCL               3.130E+19   -2.020  60330. ! f
+CH2CLCHCL2 + H = CH2CLCHCL + HCL         1.000E+14    0.000   7900. ! Est'd
+CH2CLCHCL2 + H = CH2CHCL2 + HCL          1.000E+14    0.000   7900. ! Est'd
+CH2CLCHCL2 + CL = CHCLCHCL2 + HCL        2.500E+13    0.000   1500. ! Est'd
+CH2CLCHCL2 + CL = CH2CLCCL2 + HCL        2.500E+13    0.000   1500. ! Est'd
+CH2CLCHCL2 + OH = H2O + CHCLCHCL2        5.100E+06    2.000    994. ! Est'd
+CH2CLCHCL2 + OH = H2O + CH2CLCCL2        3.800E+06    2.000   1000. ! Est'd
+CH2CLCCL3 + H = CH2CCL3 + HCL            1.000E+14    0.000   7900. ! Est'd
+CH2CLCCL3 + H = CH2CLCCL2 + HCL          1.000E+14    0.000   7900. ! Est'd
+CH2CLCCL3 + CL = CHCLCCL3 + HCL          5.000E+13    0.000   1500. ! Est'd
+CH2CLCCL3 + OH = H2O + CHCLCCL3          5.100E+06    2.000    994. ! Est'd
+CHCL2CHCL2 = C2HCL3 + HCL                8.620E+21   -2.570  51870. ! f
+CHCL2CHCL2 + H = CHCLCHCL2 + HCL         1.000E+14    0.000   7900. ! Est'd
+CHCL2CHCL2 + CL = CHCL2CCL2 + HCL        5.000E+13    0.000   1500. ! Est'd
+CHCL2CHCL2 + OH = CHCL2CCL2 + H2O        3.800E+06    2.000   1000. ! Est'd
+C2HCL5 = C2CL4 + HCL                     2.600E+13    0.000  57100. ! k
+C2HCL5 = CHCL2CCL2 + CL                  1.260E+25   -2.860  69610. ! k (refit)
+C2HCL5 + CL = C2CL5 + HCL                6.300E+12    0.000   3300. ! c,k
+C2HCL5 + H = CHCL2CCL2 + HCL             3.600E+12    0.000   4300. ! k
+C2CL6 = C2CL5 + CL                       9.620E+68  -16.100  91100. ! RRKM
+C2CL6 + H = C2CL5 + HCL                  7.200E+13    0.000   4300. ! =2*(C2HCL5+H)
+CH3CHCL (+M) = C2H3CL + H (+M)           1.940E+09    1.220  38800. ! p
+                                LOW   /  1.580E+40   -6.820  43700./
+                                TROE  /  0.6702 1222. 299./
+CH3CHCL + H = C2H4 + HCL                 1.000E+14    0.000      0. ! Est'd
+CH3CHCL + CL = C2H3CL + HCL              2.000E+13    0.000      0. ! Est'd
+C2H4 + CL = CH2CH2CL                     2.000E+13    0.000   3500. ! o
+C2H3CL + H = CH2CH2CL                    5.010E+23   -4.210   8470. ! f
+CH2CH2CL + H = C2H4 + HCL                1.000E+14    0.000      0. ! Est'd
+CH2CH2CL + CL = C2H3CL  + HCL            2.000E+13    0.000      0. ! Est'd
+CH2CLCHCL = C2H3CL  + CL                 1.720E+14    0.000  27300. ! o
+CH2CLCHCL (+M) = CHCLCHCL + H (+M)       1.940E+09    1.220  38800. ! =CH3CHCL(+M)
+                                LOW   /  1.580E+40   -6.820  43700./
+                                TROE  /  0.6702 1222. 299./
+CH2CLCHCL + H = C2H3CL  + HCL            1.000E+14    0.000      0. ! Est'd
+CH2CLCHCL + CL = CHCLCHCL + HCL          2.000E+13    0.000      0. ! Est'd
+C2H3CL  + CL = CH2CHCL2                  2.000E+13    0.000   3500. ! =C2H4+CL
+CH2CHCL2 + H = C2H3CL  + HCL             1.000E+14    0.000      0. ! Est'd
+CH2CHCL2 + CL = CH2CCL2 + HCL            1.000E+13    0.000      0. ! Est'd
+CH2CHCL2 + CL = CHCLCHCL + HCL           1.000E+13    0.000      0. ! Est'd
+CH3CCL2 (+M) = CH2CCL2 + H (+M)          1.940E+09    1.220  38800. ! =CH3CHCL(+M)
+                                LOW   /  1.580E+40   -6.820  43700./
+                                TROE  /  0.6702 1222. 299./
+CH3CCL2 + H = C2H3CL  + HCL              1.000E+14    0.000      0. ! Est'd
+CH3CCL2 + CL = CH2CCL2 + HCL             2.000E+13    0.000      0. ! Est'd
+CH2CCL2 + CL = CH2CCL3                   2.000E+13    0.000   3500. ! =C2H4+CL
+CH2CCL3 + H = CH2CCL2 + HCL              1.000E+14    0.000      0. ! Est'd
+CH2CCL3 + CL = C2HCL3 + HCL              2.000E+13    0.000      0. ! Est'd
+C2HCL3 + H = CH2CLCCL2                   1.510E+23   -4.180   7520. ! h
+CH2CCL2 + CL = CH2CLCCL2                 2.000E+13    0.000   3500. ! =C2H4+CL
+CH2CLCCL2 + H = CH2CCL2 + HCL            5.000E+13    0.000      0. ! Est'd
+CH2CLCCL2 + H = CHCLCHCL + HCL           5.000E+13    0.000      0. ! Est'd
+CH2CLCCL2 + CL = C2HCL3 + HCL            2.000E+13    0.000      0. ! Est'd
+C2HCL3 + H = CHCLCHCL2                   2.870E+22   -4.090  10890. ! f
+CHCLCHCL + CL = CHCLCHCL2                2.000E+13    0.000   3500. ! =C2H4+CL
+CHCLCHCL2 + H = CHCLCHCL + HCL           5.000E+13    0.000      0. ! Est'd
+CHCLCHCL2 + H = CH2CCL2 + HCL            5.000E+13    0.000      0. ! Est'd
+CHCLCHCL2 + CL = C2HCL3 + HCL            2.000E+13    0.000      0. ! Est'd
+C2HCL3 + CL = CHCLCCL3                   2.000E+13    0.000   3500. ! =C2H4+CL
+CHCLCCL3 + H = C2HCL3 + HCL              1.000E+14    0.000      0. ! Est'd
+CHCLCCL3 + CL = C2CL4 + HCL              2.000E+13    0.000      0. ! Est'd
+C2CL4 + H = CHCL2CCL2                    9.070E+07    0.000   2700. ! k
+C2HCL3 + CL = CHCL2CCL2                  2.000E+13    0.000   3500. ! =C2H4+CL
+CHCL2CCL2 + H = C2HCL3 + HCL             1.000E+14    0.000      0. ! Est'd
+CHCL2CCL2 + CL = C2CL4 + HCL             2.000E+13    0.000      0. ! Est'd
+C2CL5 = C2CL4 + CL                       2.510E+13    0.000  15500. ! q
+C2CL5 + H = C2CL4 + HCL                  1.000E+14    0.000      0. ! Est'd
+C2H3CL  = C2H2 + HCL                     1.620E+28   -4.290  75780. ! d
+C2H3CL  = C2H3 + CL                      1.710E+38   -7.130 100870. ! f,
+C2H3CL + H = C2H4 + CL                   1.550E+13   -0.020   5840. ! f
+C2H3CL + H = C2H3 + HCL                  1.200E+12    0.000  15000. ! d
+C2H3CL + O = CHCHCL + OH                 4.340E+08    1.550   9400. ! r
+C2H3CL + O = HCO + CH2CL                 2.100E+11    0.440   1300. ! r
+C2H3CL + CL = CH2CCL + HCL               1.700E+13    0.000   7000. ! s
+C2H3CL + CL = CHCHCL + HCL               1.700E+13    0.000   7000. ! s
+CL2 + C2H3 = C2H3CL  + CL                5.250E+12    0.000   -480. ! f
+CH2CCL2 = C2HCL + HCL                    1.450E+14    0.000  69220. ! f
+CH2CCL2 = CH2CCL + CL                    7.100E+14    0.000  80600. ! f
+CH2CCL2 + H = CH2CCL + HCL               1.200E+13    0.000   5500. ! t
+CH2CCL2 + H = C2H3CL  + CL               7.210E+12    0.000   7510. ! d
+CH2CCL2 + CL = CHCCL2 + HCL              3.330E+13    0.000   7000. ! k
+CH2CCL2 + H = CHCCL2 + H2                1.580E+13    0.000   6000. ! k
+CH2CCL2 + O = CHCCL2 + OH                2.900E+08    1.550   7400. ! r
+CH2CCL2 + O = HCO + CHCL2                2.700E+10    0.730   1000. ! r
+CHCLCHCL + H = C2H3CL + CL               3.440E+13   -0.030   5890. ! h
+CHCLCHCL = C2HCL + HCL                   7.260E+13    0.000  69090. ! f
+CHCLCHCL + O = HCO + CHCL2               2.710E+06    1.890    475. ! r
+CHCLCHCL + CL = CHCLCCL + HCL            1.700E+13    0.000   7000. ! s
+C2HCL3 = C2CL2 + HCL                     7.260E+13    0.000  74440. ! f
+C2HCL3 = CHCLCCL + CL                    3.890E+24   -2.770  91140. ! k (refit)
+C2HCL3 = CHCCL2 + CL                     7.400E+23   -2.700  90020. ! k (refit)
+C2HCL3 + H = CHCCL2 + HCL                1.200E+12    0.000  15000. ! =C2H3CL+H
+C2HCL3 + H = CHCLCCL + HCL               3.600E+12    0.000   9200. ! k
+C2HCL3 + H = CH2CCL2 + CL                1.450E+13   -0.010   5830. ! h
+C2HCL3 + H = CHCLCHCL + CL               7.370E+12   -0.010   9220. ! h
+C2HCL3 + CL = C2CL3 + HCL                1.700E+13    0.000   7000. ! k
+C2HCL3 + O = CCLO + CHCL2                1.320E+07    1.450   -200. ! u
+C2HCL3 + O = C2CL3 + OH                  2.000E+09    1.550  10300. ! u
+C2CL4 = C2CL3 + CL                       4.340E+26   -3.240  90180. ! k (refit)
+C2CL4 + H = C2CL3 + HCL                  1.200E+12    0.000  15000. ! k
+C2CL3 + CL2 = C2CL4 + CL                 5.000E+12    0.000   5000. ! k
+C2CL4 + H = C2HCL3 + CL                  1.400E+13    0.000   9200. ! k
+C2CL4 + O = CCLO + CCL3                  1.920E+07    1.830    220. ! =O+C2H4
+CH2CCL + H = C2H2 + HCL                  1.000E+14    0.000      0. ! Est'd
+CH2CCL + CL = C2HCL + HCL                2.000E+13    0.000      0. ! Est'd
+CH2CCL = C2HCL + H                       6.000E+13    0.000  40600. ! k
+CH2CCL + O = CH2CL + CO                  1.000E+13    0.000      0. ! Est'd
+CH2CCL + OH = C2HCL + H2O                5.000E+12    0.000      0. ! =OH+C2H3
+CH2CCL + O2 = CH2O + CCLO                5.000E+11    0.000      0. ! Est'd
+CHCLCHCL + H = CHCHCL + HCL              5.000E+12    0.000   9000. ! s
+C2H2 + CL = CHCHCL                       1.500E+13    0.000   3000. ! Est'd
+CHCHCL + H = C2H2 + HCL                  1.000E+14    0.000      0. ! Est'd
+CHCHCL + CL = C2HCL + HCL                1.000E+14    0.000      0. ! Est'd
+CHCHCL + O = CH2CL + CO                  1.000E+13    0.000      0. ! Est'd
+CHCHCL + OH = C2HCL + H2O                5.000E+12    0.000      0. ! Est'd
+CHCHCL + OH = C2H2 + HOCL                5.000E+12    0.000      0. ! Est'd
+CHCHCL + O2 = HCO + CHCLO                5.000E+11    0.000      0. ! Est'd
+C2HCL + CL = CHCCL2                      7.500E+12    0.000   3000. ! Est'd
+CHCCL2 + H = C2HCL + HCL                 1.000E+14    0.000      0. ! Est'd
+CHCCL2 + CL = C2CL2 + HCL                2.000E+13    0.000      0. ! Est'd
+CHCCL2 + O = CHCL2 + CO                  1.000E+13    0.000      0. ! Est'd
+CHCCL2 + OH = C2HCL + HOCL               5.000E+12    0.000      0. ! Est'd
+CHCCL2 + O2 = HCO + COCL2                5.000E+11    0.000      0. ! Est'd
+CHCLCCL = C2HCL + CL                     2.350E+14    0.000  19200. ! k
+CHCLCCL + H = C2HCL + HCL                1.000E+14    0.000      0. ! Est'd
+CHCLCCL + CL = C2CL2 + HCL               2.000E+12    0.000      0. ! Est'd
+CHCLCCL + OH = C2HCL + HOCL              5.000E+12    0.000      0. ! Est'd
+CHCLCCL + OH = C2CL2 + H2O               5.000E+12    0.000      0. ! Est'd
+CHCLCCL + O2 = CCLO + CHCLO              5.000E+11    0.000      0. ! Est'd
+CHCLCCL + O = CO + CHCL2                 1.000E+13    0.000      0. ! Est'd
+C2CL3 + O2 = CCLO + COCL2                3.200E+11    0.000   5000. ! m
+C2CL3 + O = CO + CCL3                    1.000E+13    0.000      0. ! n
+C2CL3 + M = C2CL2 + CL + M               8.000E+14    0.000  28000. ! m
+H2/2./ H2O/6./ CH4/2./ CO/1.5/ CO2/2./ C2H6/3./ CH3CL/3./ AR/0.7/ 
+CH2CL2/3./ CHCL3/3./
+C2CL3 + H = C2CL2 + HCL                  1.000E+14    0.000      0. ! Est'd
+C2HCL + H = HCL + C2H                    1.000E+13    0.000  17030. ! f
+C2HCL + H = C2H2 + CL                    2.000E+13    0.000   2100. ! f
+C2HCL + O = CHCL + CO                    2.040E+07    2.000   1900. ! =O+C2H2
+C2CL2 + O2 = CCLO + CCLO                 1.000E+10    0.000   5000. ! m
+C2CL2 + O = CO + CCL2                    7.000E+13    0.000      0. ! n
+C2CL2 + H = C2HCL + CL                   2.000E+13    0.000   2100. ! =C2HCL+H
+END
+
+References:
+a.  GRI-Mech v. 1.2 - Frenklach et al. Report GRI-95/0058 (1995).
+b.  Wang et al., Combust. Flame 105:291 (1996).
+c.  Kerr and Moss, Handbook of Bimolecular and Termolecular... (1981).
+d.  Ho et al., Combust. Sci. Technol. 85:23 (1992).
+e.  DeMore et al., Report JPL Publication 90-1 (1990).
+f.  Bozzelli, J.W., Personal Communication (1994).
+g.  Karra and Senkan, Combust. Sci. Technol. 54:333 (1987).
+h.  Ho et al., Combust. Flame 88:265 (1992).
+i.  Adusei and Fontijn, J. Phys. Chem. 98:3732 (1994).
+j.  Herron, J. Phys. Chem. Ref. Data 17:967 (1988).
+k.  Won and Bozzelli, Combust. Sci. Technol. 85:345 (1992).
+l.  Su et al., J. Phys. Chem. 98:8411 (1994).
+m.  Qun and Senkan, Combust. Sci. Technol. 101:103 (1994).
+n.  Chang and Senkan, Env. Sci. Technol. 23:442 (1989).
+o.  Tsang, Combust. Sci. Technol. 74:99 (1990).
+p.  Knyazev et al., 25th Symposium, p. 817 (1994).
+q.  Benson and Weissman, Int. J. Chem. Kinet. 14:1287 (1982).
+r.  Hransiavljevic et al., Combust. Sci. Technol. 101:231 (1994).
+s.  Wang et al. Combust. Flame 110:222 (1997).
+t.  Won, Ph.D. Dissertation, NJIT (1992).
+u.  Hranisavljevic and Fontijn, J. Phys. Chem. 99:12809 (1995).
+v.  Weissman and Benson, Int. J. Chem. Kinet. 16:307 (1984).
+
+
